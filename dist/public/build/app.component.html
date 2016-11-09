@@ -1,0 +1,1 @@
+<div *ngIf="!read"><h1>Dope Music</h1><h3>Descarga musica original</h3><button (click)="openDash()">Entrar</button></div><div *ngIf="read"><h1>logo</h1><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a><a routerLink="/about" routerLinkActive="active">About</a><router-outlet></router-outlet></div>
