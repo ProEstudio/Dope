@@ -16,7 +16,7 @@ export class DataService {
     constructor(private http: Http){}
 
     // Private instance variable to hold base url
-    private dataUrl = 'http://localhost:3000/api/users'
+    private dataUrl = 'https://dopemusic.herokuapp.com/api/users'
 
     // Fetch all existing data
     getData(): Observable<Data[]> {

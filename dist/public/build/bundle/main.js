@@ -66787,7 +66787,7 @@
 	    function DataService(http) {
 	        this.http = http;
 	        // Private instance variable to hold base url
-	        this.dataUrl = 'http://localhost:3000/api/users';
+	        this.dataUrl = 'https://dopemusic.herokuapp.com/api/users';
 	    }
 	    // Fetch all existing data
 	    DataService.prototype.getData = function () {
