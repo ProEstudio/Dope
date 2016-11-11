@@ -1,0 +1,16 @@
+.login-main{
+    @include edContainer
+}
+
+.login-title{
+    @include edItem(100);
+    @include flexCenter;
+}
+
+.login-form{
+    @include edItem(100);
+    @include flexColumn;
+    a{
+        @include flexCenter
+    }
+}

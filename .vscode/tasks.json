@@ -20,8 +20,8 @@
             "args": ["run", "test"]
         },
         {
-            "taskName": "start",
-            "args": ["start"],
+            "taskName": "dev",
+            "args": ["run","dev"],
             "isBuildCommand": true
         }
     ]

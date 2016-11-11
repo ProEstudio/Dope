@@ -57,7 +57,7 @@ gulp.task('scss:w' , ['sass'])
 gulp.task('browser-sync' , ['nodemon'], () =>{
   browserSync.init(null, {
     proxy: "http://localhost:3000",
-    files: ["src/**/*.*"],
+    files: ["dist/server/**/*.js","dist/public/build/bundle/**/*.js"],
     browser: "",
     port: 7000,
   });
@@ -68,7 +68,7 @@ gulp.task('browser-sync' , ['nodemon'], () =>{
 gulp.task('all:w',['jade' , 'babel' , 'sass'], () => {
   gulp.watch('./src/server/**/*.js', ['js:w'])
   gulp.watch('./src/app/**/*.jade', ['jade:w'])
-  gulp.watch('./src/app/**/*.scss', ['scss:w'])
+  gulp.watch('./src/app/**/**.scss', ['scss:w'])
 })
 
 // Start and Reset Server ================

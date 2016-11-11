@@ -1,9 +1,14 @@
-div(*ngIf='!read')
-    h1 Dope Music
-    h3 Descarga musica original
-    button((click)='openDash()') Entrar
-div(*ngIf='read')
-    h1 logo
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a>
-    a(routerLink="/about"  routerLinkActive='active') About
-    router-outlet
+div(*ngIf='!read').welcome-main
+    .welcome-content
+        h1 Dope Music
+        p Descarga musica original
+        button.btn_p((click)='openDash()') Entrar
+div(*ngIf='read').layout-main
+    .layout-logo
+        h1 logo
+    .layout-toggle
+        h1 Menu
+    ul.layout-menu
+        li: <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a>
+        li: a(routerLink="/about"  routerLinkActive='active') About
+router-outlet

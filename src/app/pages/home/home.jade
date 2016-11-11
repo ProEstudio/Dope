@@ -1,12 +1,11 @@
-div(*ngIf='login')
-    h2 login
-    input(type="text")
-    br
-    input(type="text")
-    br
-    button((click)='openDash2()') Entar
-    br
-    a((click)='openRegistrar()') Registrase
+div(*ngIf='login').login-main
+    .login-title
+        h2 login
+    .login-form
+        input(type="text")
+        input(type="text")
+        button((click)='openDash2()') Entar
+        a((click)='openRegistrar()') Registrase
         
 div(*ngIf='!login')
     div(*ngIf='!dash')

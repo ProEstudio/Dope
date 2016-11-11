@@ -1,3 +1,83 @@
-body {
-    margin: 2em
+// Import ED-Grid ===========
+$cssCore: false;
+$cssHelpers: true;
+$devMode: false;
+@import 'ED-GRID/ed-grid';
+// Default ==================
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
+
+body {
+  margin      : 0;
+  font-family : sans-serif;
+}
+
+img {
+  max-width : 100%;
+  height    : auto;
+}
+
+a {
+  text-decoration : none;
+
+  &:hover { text-decoration : underline }
+}
+
+.welcome-main,.layout-main{
+    @include edContainer
+}
+
+// Welcome Section ============
+.welcome-content{
+    @include edItem(100);
+    @include flexCenter;
+    @include flexColumn;
+    @include to(m){
+        font-size: 1.2em;
+        padding: 30% 0;
+        .btn_p{
+            font-size: 15px
+        }
+    }
+    @include from(m){
+        padding: 10em 0;
+    }
+    @include from(l){
+        font-size: 1.6em;
+        height: 700px;
+        .btn_p{
+            font-size: 18px
+        }
+    }
+    & h1 {
+        font-size: 2.5em;
+        margin: 0
+    }
+}
+
+.btn_p{
+    @include button(black, white , round);
+    margin: 1em
+}
+
+// Layout Section =================
+.layout-logo{
+    @include edItem(70,80)
+}
+.layout-toggle{
+    @include edItem(30,20)
+}
+.layout-menu{
+    @include edItem(100,100,20);
+    @include edMenu(l,navBar);
+    @include flexCenter;
+    @include to(l){
+        @include flexColumn
+    }
+}
+
+// Import Pages Styles 
+@import '../pages/home/home';
