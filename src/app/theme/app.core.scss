@@ -65,7 +65,7 @@ a {
 
 // Layout Section =================
 .layout-logo{
-    @include edItem(70,80,100)
+    @include edItem(70,80,15)
 }
 .layout-toggle{
     @include edItem(30,20)
@@ -76,7 +76,7 @@ a {
     }
 }
 .layout-menu{
-    @include edItem(100);
+    @include edItem(100,100,20);
     @include edMenu(l,navBar);
     @include flexCenter;
     @include to(l){
