@@ -1,4 +1,1 @@
-<!--div(*ngIf='!read').welcome-main.welcome-content
-    h1 Dope Music
-    p Descarga musica original
-    button.btn-p((click)='openDash()') Entrar--><!--div(*ngIf='read').layout-main--><div class="layout-main"><div class="layout-logo"><h1>logo</h1></div><div class="layout-toggle"><h2>Menu</h2></div><ul class="layout-menu"><li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a></li><li><a routerLink="/about" routerLinkActive="active">about</a></li></ul></div><router-outlet></router-outlet>
+<div *ngIf="!read" class="welcome-main"><div class="welcome-content"><h1>Dope Music</h1><p>Descarga musica original</p><button (click)="openDash()" class="btn-p">Entrar</button></div></div><div class="layout-main"><div class="layout-logo"><h1>logo</h1></div><div class="layout-toggle"><h2>Menu</h2></div><ul class="layout-menu"><li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a></li><li><a routerLink="/about" routerLinkActive="active">about</a></li></ul><router-outlet></router-outlet></div>

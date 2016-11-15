@@ -6,16 +6,14 @@ div(*ngIf='login').login-main
         input(type="text")
         button((click)='openDash2()') Entar
         a((click)='openRegistrar()') Registrase
-        
+
 div(*ngIf='!login').dash-main
     div(*ngIf='!dash').dash-content
-        .dash-btn
-            a((click)='openLogin()') Login
+        a.dash-btn((click)='openLogin()') Login
         h1.dash-title Dope
-        .dash-song
-            .song-cover
-                //img(src="#", alt="")
-        ul
+        img(src="#", alt="")
+        audio(controls)
+        ul.dash-album
             li Dope Music 1 - 30s
             li Dope Music 2 - 30s
             li Dope Music 3 - 30s
@@ -23,34 +21,29 @@ div(*ngIf='!login').dash-main
             li Dope Music 5 - 30s
 
     div(*ngIf='dash').dash-content
-        .dash-avatar
-            img(src="#", alt="")
+        p.dash-avatar avatar
         ul.dash-menu
             li: a((click)='openLibrary()') Biblioteca
             li: a() Cerrar Sesion
         div(*ngIf='!library')
             h1.dash-title Dope
-            div
-                div
-                    img(src="#", alt="")
-            div
-                audio(controls)
-            div
-                ul
-                    li Dope Music 1 - Full 
-                    li Dope Music 2 - Full
-                    li Dope Music 3 - Full
-                    li Dope Music 4 - Full
-                    li Dope Music 5 - Full
+            img(src="#", alt="")
+            audio(controls)
+            ul
+                li Dope Music 1 - Full 
+                li Dope Music 2 - Full
+                li Dope Music 3 - Full
+                li Dope Music 4 - Full
+                li Dope Music 5 - Full
         div(*ngIf='library')
                 div(*ngIf='!album')
-                    h1 Biblioteca
-                    a((click)='openAlbum()')
+                    h1.dash-title Biblioteca
+                    a.dash-title((click)='openAlbum()')
                         h3 Album 1
                         img(src="", alt="")
                 div(*ngIf='album')
                     img(src="", alt="")
-                    h3 Album 1
+                    h3.dash-title Album 1
                     p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste earum voluptates,
                     li Dope Music 1 - Full Album 1
                     li Dope Music 2 - Full Album 1
