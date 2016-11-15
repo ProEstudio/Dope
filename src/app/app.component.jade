@@ -1,14 +1,15 @@
-div(*ngIf='!read').welcome-main
+//div(*ngIf='!read').welcome-main
     .welcome-content
         h1 Dope Music
         p Descarga musica original
-        button.btn_p((click)='openDash()') Entrar
-div(*ngIf='read').layout-main
+        button.btn-p((click)='openDash()') Entrar
+//div(*ngIf='read').layout-main
+div.layout-main
     .layout-logo
         h1 logo
     .layout-toggle
-        h1 Menu
+        h2 Menu
     ul.layout-menu
         li: <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a>
-        li: a(routerLink="/about"  routerLinkActive='active') About
+        li: a(routerLink="/about"  routerLinkActive='active') about
 router-outlet

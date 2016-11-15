@@ -1,7 +1,8 @@
-.login-main{
+.login-main,.dash-main ,.dash-song{
     @include edContainer
 }
 
+//Login Styles =================
 .login-title{
     @include edItem(100);
     @include flexCenter;
@@ -12,5 +13,48 @@
     @include flexColumn;
     a{
         @include flexCenter
+    }
+}
+
+//Dash Styles ===================
+.dash-content{
+    @include edItem;
+    .dash-btn{
+        @include mainEnd;
+        a{
+            @include button(white, black , radius);
+            border:1px solid black;
+            &:hover{
+                @include button(black, white , radius);
+                border:1px solid black;
+                transition: .3s all
+            }
+        }
+    }
+    .dash-title{
+        @include flexCenter
+    }
+    .dash-song{
+        .song-cover{
+            @include edItem;
+            height: 300px;
+            width: 100%;
+            border: 1px solid black
+        }
+    }
+}
+
+//Dash Sign in ====================
+.dash-content{
+    .dash-avatar{
+        background: black;
+        width: 50px;
+        height: 50px;
+        @include edItem;
+        @include mainEnd;
+    }
+    .dash-menu{
+        @include edItem;
+        @include edMenu(l,navBar)
     }
 }

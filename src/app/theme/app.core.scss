@@ -37,8 +37,8 @@ a {
     @include flexColumn;
     @include to(m){
         font-size: 1.2em;
-        padding: 30% 0;
-        .btn_p{
+        padding: 10em 0;
+        .btn-p{
             font-size: 15px
         }
     }
@@ -48,7 +48,7 @@ a {
     @include from(l){
         font-size: 1.6em;
         height: 700px;
-        .btn_p{
+        .btn-p{
             font-size: 18px
         }
     }
@@ -58,7 +58,7 @@ a {
     }
 }
 
-.btn_p{
+.btn-p{
     @include button(black, white , round);
     margin: 1em
 }
@@ -76,6 +76,11 @@ a {
     @include flexCenter;
     @include to(l){
         @include flexColumn
+    }
+}
+.layout-toggle{
+    @include from(l){
+        display: none
     }
 }
 
