@@ -5,10 +5,10 @@ div(*ngIf='!read').welcome-main
         button.btn-p((click)='openDash()') Entrar
 div.layout-main
     .layout-logo
-        h1 logo
+        h1 Dope 
     .layout-toggle
-        h2 Menu
+        h1.icon-bars
     ul.layout-menu
         li: <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a>
-        li: a(routerLink="/about"  routerLinkActive='active') about
-    router-outlet
+        li: a(routerLink="/about"  routerLinkActive='active') About
+router-outlet

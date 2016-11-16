@@ -53,8 +53,8 @@ a {
         }
     }
     & h1 {
+        margin: 0;
         font-size: 2.5em;
-        margin: 0
     }
 }
 
@@ -64,11 +64,19 @@ a {
 }
 
 // Layout Section =================
+.layout-main{
+    background: black;
+    color: white
+}
 .layout-logo{
-    @include edItem(70,80,15)
+    @include edItem(70,80,15);
+    @include from(l){
+        @include flexCenter
+    }
 }
 .layout-toggle{
-    @include edItem(30,20)
+    @include edItem(30,20);
+    @include flexCenter
 }
 .layout-toggle{
     @include from(l){
@@ -76,12 +84,27 @@ a {
     }
 }
 .layout-menu{
+    text-align: center;
     @include edItem(100,100,20);
     @include edMenu(l,navBar);
-    @include flexCenter;
-    @include to(l){
-        @include flexColumn
+    li{
+        background: white;
+        &:hover{
+            background: black;
+            transition: .3s all;
+            a{
+                color: white
+            }
+        }
+        a{
+            color: black;
+        }
     }
+    @include to(l){
+        padding: 0;
+        font-size: 1.6em;
+    }
+
 }
 
 // Import Pages Styles 

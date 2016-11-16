@@ -1,32 +1,38 @@
 div(*ngIf='login').login-main
     .login-title
-        h2 login
+        h2 Iniciar Sesion
     .login-form
-        input(type="text")
-        input(type="text")
-        button((click)='openDash2()') Entar
-        a((click)='openRegistrar()') Registrase
+        input(type="text" placeholder='Usuario')
+        input(type="password" placeholder='Contraseña')
+        button((click)='openDash2()') Entrar
+        a.form-btn((click)='openRegistrar()') Registrase
 
 div(*ngIf='!login').dash-main
     div(*ngIf='!dash').dash-content
-        a.dash-btn((click)='openLogin()') Login
-        h1.dash-title Dope
-        img(src="#", alt="")
-        audio(controls)
+        .dash-btn
+            a((click)='openLogin()') Login
+        h1.dash-title Dope Music
+        .dash-song-main
+            .song-cover
+                h1 song
+                //img(src="#", alt="")
         ul.dash-album
             li Dope Music 1 - 30s
             li Dope Music 2 - 30s
             li Dope Music 3 - 30s
             li Dope Music 4 - 30s
             li Dope Music 5 - 30s
-
     div(*ngIf='dash').dash-content
-        p.dash-avatar avatar
+        .dash-perfil
+            .perfil-name
+                 h2 Usuario
+            .perfil-avatar 
+                img(src="build/media/img/1.png", alt="")
         ul.dash-menu
             li: a((click)='openLibrary()') Biblioteca
             li: a() Cerrar Sesion
         div(*ngIf='!library')
-            h1.dash-title Dope
+            h1.dash-title Dope Music
             img(src="#", alt="")
             audio(controls)
             ul
