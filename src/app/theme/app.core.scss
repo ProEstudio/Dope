@@ -3,6 +3,7 @@ $cssCore: false;
 $cssHelpers: true;
 $devMode: false;
 @import 'ED-GRID/ed-grid';
+
 // Default ==================
 *,
 *:before,
@@ -49,10 +50,12 @@ a {
         font-size: 1.6em;
         height: 700px;
         .btn-p{
-            font-size: 18px
+            font-size: 18px;
         }
     }
     & h1 {
+        animation-name: logo;
+        animation-duration: 5s; 
         margin: 0;
         font-size: 2.5em;
     }
@@ -106,6 +109,8 @@ a {
     }
 
 }
+
+@import 'app.animation';
 
 // Import Pages Styles 
 @import '../pages/home/home';
