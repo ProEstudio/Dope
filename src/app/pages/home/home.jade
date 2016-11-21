@@ -33,14 +33,23 @@ div(*ngIf='!login').dash-main
             li: a() Cerrar Sesion
         div(*ngIf='!library')
             h1.dash-title Dope Music
-            img(src="#", alt="")
-            audio(controls)
-            ul
-                li Dope Music 1 - Full 
-                li Dope Music 2 - Full
-                li Dope Music 3 - Full
-                li Dope Music 4 - Full
-                li Dope Music 5 - Full
+            .dash-song-main
+                .song-cover
+                    h1 song
+                    //img(src="#", alt="")
+            ul.dash-album
+                li
+                    p S1 
+                    h3 Song 1 #[span Dope Music]
+                    strong 3:15
+                li
+                    p S2 
+                    h3 Song 2 #[span Dope Music]
+                    strong 4:02
+                li
+                    p S3 
+                    h3 Song 3 #[span Dope Music]
+                    strong 3:21
         div(*ngIf='library')
                 div(*ngIf='!album')
                     h1.dash-title Biblioteca
