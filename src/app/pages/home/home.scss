@@ -1,0 +1,121 @@
+// Containers ================
+app-home, .login-main, .dash-main , .dash-album{
+    @include edContainer
+}
+
+// login styles ==============
+.login-title{
+    @include edItem;
+    @include flexCenter
+}
+.login-form{
+    @include edItem;
+    @include flexColumn;
+    @include to(m){
+        input{
+            padding: .8em;
+            margin: .1em 0;
+            font-size: 15px;
+            border: none;
+            border: 1px solid black;
+        }
+        button{
+            margin-top: .2em;
+            font-size: 17px;
+            @include button(black, white)
+        }
+        .form-btn{
+            border: 1px solid black;
+            @include flexCenter;
+            @include button(white,black)
+        }
+    }
+}
+
+// Dash styles ================
+.dash-content{
+    @include edItem;
+}
+.dash-btn{
+    padding: 0;
+    margin:1em 0.6em;
+    @include edItem(100);
+    @include mainEnd;
+    a{
+        border: 1px solid black;
+        @include button(white, black , radius)
+    }
+}
+.dash-title{
+    margin-bottom: 1.5em;
+    @include flexCenter;
+}
+.dash-perfil{
+    @include edItem;
+    @include edContainer;
+    padding: 0;
+}
+.perfil-name{
+    @include edItem(80)
+}
+.perfil-avatar{
+    @include edItem(20);
+    padding: 0;
+    img{
+        height: 50px;
+        width: 50px;
+        margin: .5em 0;
+    }
+}
+.dash-menu{
+    @include edMenu(l,navBar);
+    @include flexCenter;
+    @include to(l){
+        padding: 0;
+        font-size: 1.6em;
+        @include flexColumn;
+    }
+}
+.dash-song-main{
+    @include edItem;
+    @include edContainer;
+    border: 1px solid black;
+    .song-cover{
+        @include edItem(100,100,20);
+        @include flexCenter;
+        border: 1px solid black;
+        padding: 4em;
+        margin: 1em 0;
+        h1{
+            font-weight: 200;
+        }
+    }
+}
+.dash-album{
+    @include edItem;
+    padding: 0;
+    margin: 0.5em 0;
+    li{
+        @include edItem;
+        padding: 0;
+        @include flexCenter;
+        @include mainJustify;
+        border-bottom: 1px solid black;
+        p{
+            border: 1px solid black;
+            padding: 0.8em;
+            margin: 0.1em 0;
+        }
+        h3{
+            @include flexColumn;
+            span{
+                font-size: .8em;
+                font-weight: 200;
+                margin: 0.2em
+            }
+        }
+        strong{
+            padding: .4em
+        }
+    }
+}

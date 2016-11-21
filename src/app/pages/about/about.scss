@@ -1,0 +1,7 @@
+app-about, main{
+    @include edItem;
+    @include edContainer
+}
+section{
+    @include edItem
+}

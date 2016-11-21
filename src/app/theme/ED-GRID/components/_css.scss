@@ -1,0 +1,63 @@
+@if $cssCore == true {
+  // offset
+  @include cssOffset();
+
+  // flexbox
+  @include flexOrder();
+
+  @include cssMainJustify();
+  @include cssMainDistribute();
+  @include cssMainStart();
+  @include cssMainCenter();
+  @include cssMainEnd();
+
+  @include cssCrossStart();
+  @include cssCrossCenter();
+  @include cssCrossEnd();
+
+  @include cssFlexReverse();
+  @include cssFlexColumn();
+  @include cssFlexColumnReverse();
+
+  //grids
+  .grid-container.grid-1234 { @include grid('.grid-item', 1, 2, 3, 4, 1em) }
+  .grid-container.grid-2345 { @include grid('.grid-item', 2, 3, 4, 5, 1em) }
+
+  // devMode
+  body.dev,
+  body.desarrollo {
+    @include devMode();
+    .ed-container { @include devModeContainer; }
+    .ed-item      { @include devModeItem; }
+  }
+
+  // Botones
+  .button,
+  button {
+    @include button();
+    &.round  { @include button(#DDD, #333, round) }
+    &.radius { @include button(#DDD, 333, radius) }
+  }
+
+  // Menus
+  // se requiere la clase .ed-menu
+  // y la clase para cambio a horizontal
+  .ed-menu {
+    &.s-horizontal  { @include edMenu(s)  }
+    &.m-horizontal  { @include edMenu(m)  }
+    &.l-horizontal  { @include edMenu(l)  }
+    &.xl-horizontal { @include edMenu(xl) }
+  }
+}
+
+// todo: ver que componentes mover a cssCore (quizas flexbox)
+// todo: o quizas separarlos para activar unos u otros
+@if $cssHelpers == true {
+  @include coreGrid();
+  @include helpers();
+  @include flexCssHelpers();
+  @include visibility();
+
+  .ed-video { @include edVideo() }
+  .button   { @include button()  }
+}
