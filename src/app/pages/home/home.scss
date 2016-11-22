@@ -1,5 +1,5 @@
 // Containers ================
-app-home, .login-main, .dash-main{
+app-home, .login-main, .dash-main , .dash-album{
     @include edContainer
 }
 
@@ -88,6 +88,34 @@ app-home, .login-main, .dash-main{
         margin: 1em 0;
         h1{
             font-weight: 200;
+        }
+    }
+}
+.dash-album{
+    @include edItem;
+    padding: 0;
+    margin: 0.5em 0;
+    li{
+        @include edItem;
+        padding: 0;
+        @include flexCenter;
+        @include mainJustify;
+        border-bottom: 1px solid black;
+        p{
+            border: 1px solid black;
+            padding: 0.8em;
+            margin: 0.1em 0;
+        }
+        h3{
+            @include flexColumn;
+            span{
+                font-size: .8em;
+                font-weight: 200;
+                margin: 0.2em
+            }
+        }
+        strong{
+            padding: .4em
         }
     }
 }

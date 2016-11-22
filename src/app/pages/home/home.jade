@@ -17,11 +17,18 @@ div(*ngIf='!login').dash-main
                 h1 song
                 //img(src="#", alt="")
         ul.dash-album
-            li Dope Music 1 - 30s
-            li Dope Music 2 - 30s
-            li Dope Music 3 - 30s
-            li Dope Music 4 - 30s
-            li Dope Music 5 - 30s
+            li
+                p S1 
+                h3 Song 1 #[span Dope Music]
+                strong 30s
+            li
+                p S2 
+                h3 Song 2 #[span Dope Music]
+                strong 30s
+            li
+                p S3 
+                h3 Song 3 #[span Dope Music]
+                strong 30s
     div(*ngIf='dash').dash-content
         .dash-perfil
             .perfil-name
