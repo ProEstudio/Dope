@@ -1,5 +1,5 @@
 // Containers ================
-app-home, .login-main, .dash-main , .dash-album{
+app-home, .login-main, .dash-main , .dash-album, .dash-library{
     @include edContainer
 }
 
@@ -102,9 +102,10 @@ app-home, .login-main, .dash-main , .dash-album{
         @include mainJustify;
         border-bottom: 1px solid black;
         p{
-            border: 1px solid black;
             padding: 0.8em;
             margin: 0.1em 0;
+            border: 1px solid black;
+
         }
         h3{
             @include flexColumn;
@@ -117,5 +118,36 @@ app-home, .login-main, .dash-main , .dash-album{
         strong{
             padding: .4em
         }
+    }
+}
+.library-list{
+    @include edItem;
+    @include flexCenter;
+    @include flexColumn;
+    margin-bottom: 2em;
+    & a{
+        cursor: pointer;
+        border: 1px solid black;
+        padding: 5em;
+        text-decoration: none;
+        @include flexCenter;
+        &:hover{
+            background: black;
+            color: white;
+            transition: .5s all
+        }
+    }
+}
+.library-album{
+    @include edItem;
+    @include flexCenter;
+    @include flexColumn;
+    .la-title{
+        font-size: 1.4em;
+    }
+    .bdiv{
+        width: 90%;
+        margin: 1em;
+        border: 1px solid black;
     }
 }
