@@ -45,6 +45,9 @@ app-home, .login-main, .dash-main , .dash-album, .dash-library{
         border: 1px solid black;
         @include button(white, black , radius)
     }
+    @include from(l){
+        display: none
+    }
 }
 .dash-title{
     margin-bottom: 1.5em;
@@ -100,7 +103,7 @@ app-home, .login-main, .dash-main , .dash-album, .dash-library{
         padding: 0;
         @include flexCenter;
         @include mainJustify;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid rgba(0,0,0,0.15);
         p{
             padding: 0.8em;
             margin: 0.1em 0;

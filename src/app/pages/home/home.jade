@@ -17,17 +17,9 @@ div(*ngIf='!login').dash-main
                 h1 song
                 //img(src="#", alt="")
         ul.dash-album
-            li
+            li(*ngFor='let dope of data')
                 p S1 
-                h3 Song 1 #[span Dope Music]
-                strong 30s
-            li
-                p S2 
-                h3 Song 2 #[span Dope Music]
-                strong 30s
-            li
-                p S3 
-                h3 Song 3 #[span Dope Music]
+                h3 {{dope.album.song.name}} #[span {{dope.album.artist}}]
                 strong 30s
     div(*ngIf='dash').dash-content
         .dash-perfil
@@ -45,18 +37,10 @@ div(*ngIf='!login').dash-main
                     h1 song
                     //img(src="#", alt="")
             ul.dash-album
-                li
+                li(*ngFor='let dope of data')
                     p S1 
-                    h3 Song 1 #[span Dope Music]
-                    strong 3:15
-                li
-                    p S2 
-                    h3 Song 2 #[span Dope Music]
-                    strong 4:02
-                li
-                    p S3 
-                    h3 Song 3 #[span Dope Music]
-                    strong 3:21
+                    h3 {{dope.album.song.name}} #[span {{dope.album.artist}}]
+                    strong {{dope.album.song.time}}
         div(*ngIf='library').dash-library
             div(*ngIf='!album').library-list
                 h1 Biblioteca

@@ -4,12 +4,15 @@ div(*ngIf='!read').welcome-main
         p Descarga musica original
         button.btn-p((click)='openDash()') Entrar
 header
-    div.layout-main
+    .layout-main
         .layout-logo
-            h1 Dope 
+            p Dope 
         .layout-toggle
-            h1.icon-bars
+            p.icon-bars
         ul.layout-menu
             li: <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a>
             li: a(routerLink="/about"  routerLinkActive='active') About
+        .layout-btn
+            a((click)='openLogin()') Login
+            a.s-btn((click)='openRegistrar()') Registrase
 router-outlet

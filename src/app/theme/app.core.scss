@@ -2,6 +2,7 @@
 $cssCore: false;
 $cssHelpers: true;
 $devMode: false;
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
 @import 'ED-GRID/ed-grid';
 
 // Default ==================
@@ -27,20 +28,26 @@ a {
   &:hover { text-decoration : underline }
 }
 
-.welcome-main,.layout-main{
+.welcome-main, .layout-main{
     @include edContainer
 }
-
+.layout-main{
+    padding: 0
+}
 // Welcome Section ============
 .welcome-content{
     @include edItem(100);
     @include flexCenter;
     @include flexColumn;
     @include to(m){
-        font-size: 1.2em;
-        padding: 10em 0;
+        font-size: 1.3em;
+        p{
+            font-size: 1.1em;
+            margin: 1.5em 0
+        }
         .btn-p{
-            font-size: 15px
+            font-size: 18px;
+            margin: 0
         }
     }
     @include from(m){
@@ -66,21 +73,27 @@ a {
 
 // Layout Section =================
 header{
-    background: black
-}
-.layout-main{
-    background: black;
-    color: white
+    @include from(l){
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+    }
 }
 .layout-logo{
     @include edItem(70,80,15);
+    font-size: 1.5em;
+    @include to(l){
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+    }
     @include from(l){
         @include flexCenter
     }
 }
 .layout-toggle{
     @include edItem(30,20);
-    @include flexCenter
+    @include flexCenter;
+    font-size: 1.5em;
+     @include to(l){
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+    }
 }
 .layout-toggle{
     @include from(l){
@@ -93,13 +106,6 @@ header{
     @include edMenu(l,navBar);
     li{
         background: white;
-        &:hover{
-            background: black;
-            transition: .3s all;
-            a{
-                color: white
-            }
-        }
         a{
             color: black;
         }
@@ -110,7 +116,23 @@ header{
     }
 
 }
-
+.layout-btn{
+    @include edItem(60);
+    @include flexCenter;
+    @include mainEnd;
+    @include to(l){
+        display: none
+    }
+    a{  
+        margin: 0 3px;
+        border: 1px solid black;
+        @include button(white, black , radius)
+    }
+    .s-btn{
+        margin: 0 3px;
+        @include button(black, white , radius)
+    }
+}
 // Import Pages Styles 
 @import '../pages/home/home';
 @import '../pages/about/about';
