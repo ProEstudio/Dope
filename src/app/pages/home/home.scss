@@ -3,35 +3,6 @@ app-home, .login-main, .dash-main , .dash-album, .dash-library{
     @include edContainer
 }
 
-// login styles ==============
-.login-title{
-    @include edItem;
-    @include flexCenter
-}
-.login-form{
-    @include edItem;
-    @include flexColumn;
-    @include to(m){
-        input{
-            padding: .8em;
-            margin: .1em 0;
-            font-size: 15px;
-            border: none;
-            border: 1px solid black;
-        }
-        button{
-            margin-top: .2em;
-            font-size: 17px;
-            @include button(black, white)
-        }
-        .form-btn{
-            border: 1px solid black;
-            @include flexCenter;
-            @include button(white,black)
-        }
-    }
-}
-
 // Dash styles ================
 .dash-content{
     @include edItem;
@@ -50,8 +21,11 @@ app-home, .login-main, .dash-main , .dash-album, .dash-library{
     }
 }
 .dash-title{
-    margin-bottom: 1.5em;
+    margin: 1.5em 0;
     @include flexCenter;
+    @include from(l){
+        font-size: 2.6em
+    }
 }
 .dash-perfil{
     @include edItem;

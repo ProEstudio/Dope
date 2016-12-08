@@ -2,7 +2,7 @@ div(*ngIf='!read').welcome-main
     .welcome-content
         h1 Dope Music
         p Descarga musica original
-        button.btn-p((click)='openDash()') Entrar
+        button.btn-p((click)='openDash()') Empezar
 header
     .layout-main
         .layout-logo
@@ -12,7 +12,7 @@ header
         ul.layout-menu
             li: <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a>
             li: a(routerLink="/about"  routerLinkActive='active') About
-        .layout-btn
-            a((click)='openLogin()') Login
-            a.s-btn((click)='openRegistrar()') Registrase
+        .layout-login
+            a(routerLink="/login"  routerLinkActive='active') Login
+            a.r-btn((click)='openRegistrar()') Registrate
 router-outlet

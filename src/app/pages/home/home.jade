@@ -1,16 +1,5 @@
-div(*ngIf='login').login-main
-    .login-title
-        h2 Iniciar Sesion
-    .login-form
-        input(type="text" placeholder='Usuario')
-        input(type="password" placeholder='Contraseña')
-        button((click)='openDash2()') Entrar
-        a.form-btn((click)='openRegistrar()') Registrase
-
 div(*ngIf='!login').dash-main
     div(*ngIf='!dash').dash-content
-        .dash-btn
-            a((click)='openLogin()') Login
         h1.dash-title Dope Music
         .dash-song-main
             .song-cover
@@ -20,6 +9,7 @@ div(*ngIf='!login').dash-main
             li(*ngFor='let dope of data')
                 p S1 
                 h3 {{dope.album.song.name}} #[span {{dope.album.artist}}]
+                span #musica, #pop, #music, #electro, #regge, #reggaetoon
                 strong 30s
     div(*ngIf='dash').dash-content
         .dash-perfil
