@@ -1,9 +1,10 @@
 // Import ED-Grid ===========
 $cssCore: false;
-$cssHelpers: true;
+$cssHelpers: false;
 $devMode: false;
+@import 'EDgrid/ed-grid';
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
-@import 'ED-GRID/ed-grid';
 
 // Default ==================
 *,
