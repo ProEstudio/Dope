@@ -1,7 +1,6 @@
 // Dependencies =======================
 import express from 'express';
 import bodyParser from 'body-parser';
-import router from './routes/index.route';
 import path from 'path';
 import morgan from 'morgan';
 import helmet from 'helmet';
@@ -21,7 +20,9 @@ class Server {
         this.app.use(cors());
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: true}));
-        this.app.use('/', express.static(path.join(__dirname + '/../public')));
+        this.app.use('/app', express.static(path.join(__dirname + '/../app')));
+        this.app.use('/node_modules', express.static(path.join(__dirname + '/../node_modules/')));
+        this.app.use('/systemjs.config.js', express.static(path.join(__dirname + '/../systemjs.config.js')));
     }
 
     configureCORS(){
@@ -36,9 +37,8 @@ class Server {
     }
 
     configureRoutes(){
-        this.app.use('/api', router);
         this.app.get('/', (req, res, next) => {
-            res.sendfile(path.join(__dirname + 'index.html'))
+            res.sendfile(path.join(__dirname + '/../index.html'))
         })
     }
 
