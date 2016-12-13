@@ -7,7 +7,6 @@ const autoprefixer = require('autoprefixer');
 const plumber = require('gulp-plumber');
 const nodemon = require('gulp-nodemon');
 const babel = require('gulp-babel');
-const sourcemaps = require('gulp-sourcemaps');
 const jade = require ('gulp-jade');
 const reload = browserSync.reload
 
@@ -20,7 +19,7 @@ gulp.task('babel', () => {
         .pipe(babel({
             presets: ['es2015']
         }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('./'));
 })
 
 // Watch Babel ==========================
@@ -30,7 +29,7 @@ gulp.task('js:w', ['babel'], reload)
 gulp.task('jade', () => {
   return gulp.src('src/app/**/*.jade')
       .pipe(jade())
-      .pipe(gulp.dest('./dist/public/build/'))
+      .pipe(gulp.dest('app'))
 })
 
 // Watch Jade ===========================
@@ -46,7 +45,7 @@ gulp.task('sass',  () => {
         .on('error', sass.logError))
         .pipe(plumber())
         .pipe(postcss(processors))
-        .pipe(gulp.dest('./dist/public/build/css/'))
+        .pipe(gulp.dest('app/theme/'))
         .pipe(browserSync.stream());
 });
 
@@ -57,7 +56,7 @@ gulp.task('scss:w' , ['sass'])
 gulp.task('browser-sync' , ['nodemon'], () =>{
   browserSync.init(null, {
     proxy: "http://localhost:3000",
-    files: ["dist/server/**/*.js","dist/public/build/bundle/**/*.js"],
+    files: ["server/**/*.js","app/**/*.js"],
     browser: "",
     port: 7000,
   });
@@ -75,7 +74,7 @@ gulp.task('all:w',['jade' , 'babel' , 'sass'], () => {
 gulp.task('nodemon', function (cb) {
   var started = false;
   return nodemon({
-    script: 'dist/index.js'
+    script: 'start.js'
   }).on('start', function () {
     // to avoid nodemon being started multiple times
     // thanks @matthisk

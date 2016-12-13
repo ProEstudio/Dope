@@ -1,5 +1,7 @@
-import './polyfills';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
+<<<<<<< HEAD
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
@@ -33,6 +35,13 @@ const routing = RouterModule.forRoot([
                    LoginComponent],
     providers: [DataService],
     bootstrap: [AppComponent]
-})
+=======
+import { AppComponent }  from './app.component';
 
-export class AppModule {}
+@NgModule({
+  imports:      [ BrowserModule ],
+  declarations: [ AppComponent ],
+  bootstrap:    [ AppComponent ]
+>>>>>>> Test
+})
+export class AppModule { }
