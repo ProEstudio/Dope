@@ -1,0 +1,70 @@
+header{
+    @include from(l){
+        border-bottom: 1px solid rgba(0,0,0,0.10);
+    }
+}
+.layout-logo{
+    @include edItem(70,80,15);
+    font-size: 1.5em;
+    @include to(l){
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+    }
+    @include from(l){
+        @include flexCenter
+    }
+}
+.layout-toggle{
+    @include edItem(30,20);
+    @include flexCenter;
+    font-size: 1.5em;
+     @include to(l){
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+    }
+}
+.layout-toggle{
+    @include from(l){
+        display: none
+    }
+}
+.layout-menu{
+    text-align: center;
+    @include edItem(100,100,20);
+    @include edMenu(l,navBar);
+    li{
+        background: white;
+        a{
+            color: black;
+            &:hover{
+                text-decoration: underline
+            }
+        }
+    }
+    @include to(l){
+        padding: 0;
+        font-size: 1.6em;
+    }
+
+}
+.layout-login{
+    @include edItem(100,60);
+    @include flexCenter;
+    @include mainEnd;
+    a{  
+        margin: 0 3px;
+        @include to(l){
+            font-size: 1.6em;
+            width: 100%;
+            margin: 5px 3px;
+        }
+        @include from(l){ 
+            border: 1px solid black;
+            @include button(white, black , radius);
+        }
+    }
+    .r-btn{
+        margin: 0 3px;
+        @include from(l){
+            @include button(black, white , radius)
+        }
+    }
+}

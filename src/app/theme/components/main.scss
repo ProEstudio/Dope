@@ -1,0 +1,36 @@
+.welcome-main{
+    @include edContainer
+}
+.welcome-content{
+    @include edItem(100);
+    @include flexCenter;
+    @include flexColumn;
+    margin: 20% 0;
+    @include to(l){
+        font-size: 1.3em;
+        p{
+            font-size: 1.1em;
+            margin: 1.5em 0
+        }
+        .btn-p{
+            font-size: 18px;
+            margin: 0
+        }
+    }
+    @include from(l){
+        font-size: 1.6em;
+        height: 700px;
+        .btn-p{
+            font-size: 18px
+        }
+    }
+    & h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+}
+
+.btn-p{
+    @include button(black, white , round);
+    margin: 1em
+}

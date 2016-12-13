@@ -3,16 +3,18 @@ div(*ngIf='!read').welcome-main
         h1 Dope Music
         p Descarga musica original
         button.btn-p((click)='openDash()') Empezar
-header
-    .layout-main
-        .layout-logo
+header.main-header
+    .main-header__content
+        .main-header__logo
             p Dope 
-        .layout-toggle
+        .main-header__toggle
             p.icon-bars
-        ul.layout-menu
-            li: <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a>
-            li: a(routerLink="/about"  routerLinkActive='active') About
-        .layout-login
-            a(routerLink="/login"  routerLinkActive='active') Login
-            a.r-btn((click)='openRegistrar()') Registrate
+        .main-header__nav
+            nav.main-nav
+                ul.main-nav__menu
+                    li.main-nav__menu__item: <a class="main-menu__link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </a>
+                    li.main-nav__menu__item: a.main-menu__link(routerLink="/about"  routerLinkActive='active') About
+                .main-nav__login
+                    a.main-nav__login__button(routerLink="/login"  routerLinkActive='active') Login
+                    a.main-nav__login__button((click)='openRegistrar()') Registrate
 router-outlet

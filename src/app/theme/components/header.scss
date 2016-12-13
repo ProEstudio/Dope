@@ -1,0 +1,55 @@
+.main-header{
+    color: $favorite;
+    &__content{
+        @include edContainer;
+    }
+
+    &__logo{
+        @include edItem(85,90,10)
+    }
+
+    &__toggle{
+        @include edItem(15,10);
+        @include hideFrom(l)
+    }
+
+    &__nav{
+        @include edItem(100,100,90);
+        .main-nav{
+            @include edContainer;
+            &__menu{
+                @include edItem(100,100,20);
+                @include edMenu(l);
+                text-align: center
+            }
+
+            &__login{
+                @include edItem(100,100,80);
+                display: flex;
+                @include to(l){
+                    text-align: center;
+                    flex-direction: column;
+                    &__button{
+                        margin: 20px
+                    }
+                }
+                @include from(l){
+                    align-items: center;
+                    justify-content: flex-end;
+                     &__button{
+                        margin: 0 10px
+                    }
+                }
+                
+            }
+        }
+
+        @include to(l){
+            font-size: 25px
+        }
+         @include from(l){
+            font-size: 17px
+        }
+    }
+}
+

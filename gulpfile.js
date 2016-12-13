@@ -7,7 +7,6 @@ const autoprefixer = require('autoprefixer');
 const plumber = require('gulp-plumber');
 const nodemon = require('gulp-nodemon');
 const babel = require('gulp-babel');
-const sourcemaps = require('gulp-sourcemaps');
 const jade = require ('gulp-jade');
 const reload = browserSync.reload
 

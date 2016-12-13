@@ -1,23 +1,19 @@
-div(*ngIf='!login').dash-main
-    div(*ngIf='!dash').dash-content
-        h1.dash-title Dope Music
-        .dash-song-main
-            .song-cover
-                h1 song
-                //img(src="#", alt="")
-        ul.dash-album
-            li(*ngFor='let dope of data')
-                p S1 
-                h3 {{dope.album.song.name}} #[span {{dope.album.artist}}]
-                span #musica, #pop, #music, #electro, #regge, #reggaetoon
-                strong 30s
-    div(*ngIf='dash').dash-content
-        .dash-perfil
-            .perfil-name
-                 h2 Usuario
-            .perfil-avatar 
-                img(src="build/media/img/1.png", alt="")
-        ul.dash-menu
+div(*ngIf='!login').main-dash
+    div(*ngIf='!dash').main-dash__content
+        .main-dash__song
+            h1.main-dash__title Song
+            //img(src="#", alt="")
+        .main-dash__list
+            ul
+                li(*ngFor='let dope of data')
+                    p S1 
+                    h3 {{dope.album.song.name}} #[span {{dope.album.artist}}]
+                    span #musica, #pop, #music, #electro, #regge, #reggaetoon
+                    strong 30s
+    div(*ngIf='dash')
+        h2 Usuario
+        img(src="build/media/img/1.png", alt="")
+        ul
             li: a((click)='openLibrary()') Biblioteca
             li: a() Cerrar Sesion
         div(*ngIf='!library')
