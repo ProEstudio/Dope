@@ -20,9 +20,7 @@ class Server {
         this.app.use(cors());
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: true}));
-        this.app.use('/app', express.static(path.join(__dirname + '/../app')));
-        this.app.use('/node_modules', express.static(path.join(__dirname + '/../node_modules/')));
-        this.app.use('/systemjs.config.js', express.static(path.join(__dirname + '/../systemjs.config.js')));
+        this.app.use('/', express.static(path.join(__dirname + '/../public')));
     }
 
     configureCORS(){
@@ -38,7 +36,7 @@ class Server {
 
     configureRoutes(){
         this.app.get('/', (req, res, next) => {
-            res.sendfile(path.join(__dirname + '/../index.html'))
+            res.sendfile(path.join(__dirname + 'index.html'))
         })
     }
 
