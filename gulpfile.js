@@ -29,7 +29,7 @@ gulp.task('js:w', ['babel'], reload)
 gulp.task('jade', () => {
   return gulp.src('src/app/**/*.jade')
       .pipe(jade())
-      .pipe(gulp.dest('app'))
+      .pipe(gulp.dest('public'))
 })
 
 // Watch Jade ===========================
@@ -45,7 +45,7 @@ gulp.task('sass',  () => {
         .on('error', sass.logError))
         .pipe(plumber())
         .pipe(postcss(processors))
-        .pipe(gulp.dest('app/theme/'))
+        .pipe(gulp.dest('public'))
         .pipe(browserSync.stream());
 });
 
