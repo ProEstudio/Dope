@@ -22,7 +22,7 @@
         {
             "taskName": "dev",
             "args": ["run","dev"],
-            "isBuildCommand": true
+           "isBuildCommand": true
         }
     ]
 }

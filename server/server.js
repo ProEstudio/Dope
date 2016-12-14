@@ -56,9 +56,7 @@ var Server = function () {
             this.app.use((0, _cors2.default)());
             this.app.use(_bodyParser2.default.json());
             this.app.use(_bodyParser2.default.urlencoded({ extended: true }));
-            this.app.use('/app', _express2.default.static(_path2.default.join(__dirname + '/../app')));
-            this.app.use('/node_modules', _express2.default.static(_path2.default.join(__dirname + '/../node_modules/')));
-            this.app.use('/systemjs.config.js', _express2.default.static(_path2.default.join(__dirname + '/../systemjs.config.js')));
+            this.app.use('/', _express2.default.static(_path2.default.join(__dirname + '/../public')));
         }
     }, {
         key: 'configureCORS',
@@ -76,7 +74,7 @@ var Server = function () {
         key: 'configureRoutes',
         value: function configureRoutes() {
             this.app.get('/', function (req, res, next) {
-                res.sendfile(_path2.default.join(__dirname + '/../index.html'));
+                res.sendfile(_path2.default.join(__dirname + 'index.html'));
             });
         }
     }, {
