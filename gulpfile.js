@@ -27,7 +27,7 @@ gulp.task('js:w', ['babel'], reload)
 
 //Jade ==================================
 gulp.task('jade', () => {
-  return gulp.src('src/app/**/*.jade')
+  return gulp.src('src/**/*.jade')
       .pipe(jade())
       .pipe(gulp.dest('public'))
 })
