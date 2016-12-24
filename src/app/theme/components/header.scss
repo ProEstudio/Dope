@@ -1,0 +1,24 @@
+$devMode: false;
+.main-header{
+    color: $favorite;
+    &__content{
+        @include edContainer
+    }
+    &__logo{
+        @include edItem(85,90,10)
+    }
+    &__toggole{
+        @include edItem(15,10)
+    }
+}
+.main-nav__menu{
+    @include edMenu(m)
+}
+
+.main-nav{
+    @include edNav(right,m)
+}
+.main-header__toggle{
+    @include navToggle(16px,black);
+    @include showTo(m)
+}
