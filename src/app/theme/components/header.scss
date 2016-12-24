@@ -3,7 +3,7 @@
         @include edContainer
     }
     &__logo{
-        @include edItem(90,20,10)
+        @include edItem(90,20,60)
     }
     &__toggle{
         margin: 15px 0;
@@ -11,64 +11,27 @@
         @include showTo(m);
     }
     &__nav{
-        @include edItem(100,80,90);
+        @include edItem(100,80,40);
         .main-nav{
-            @include edContainer;
             @include edNav(right,m);
             background: $primary;
             &__menu{
-                @include edItem(100,30,20);
                 @include edMenu(m);
-                text-align: center
-            }
-            &__login{
-                @include edItem(100,70,80);
-                display: flex;
-                @include to(m){
-                    text-align: center;
-                    flex-direction: column;
-                    &__button, &__button__2{
-                        margin: 5px;
-                        padding: 9px;
-                        color: $secondary;
-                        text-decoration: none;
-                        border: 1px solid $secondary;
-                        border-radius: 5px;
-                        &:hover{
-                            background:lighten($secondary, 90) 
-                        }
+                text-align: center;
+                &__item{
+                    a{
+                        color: $favorite
                     }
-                    &__button__2{
+                    &:hover{
                         background: $secondary;
-                        color: $primary;
-                        &:hover{
-                             background:lighten($secondary, 8) 
-                        }
-                    }
-                }
-                @include from (m){
-                    align-items: center;
-                    justify-content: flex-end;
-                    &__button, &__button__2{
-                        margin: 0 4px;
-                        padding: 9px;
-                        color: $secondary;
-                        text-decoration: none;
-                        border: 1px solid $secondary;
-                        border-radius: 5px;
-                        &:hover{
-                            background:lighten($secondary, 90) 
-                        }
-                    }
-                    &__button__2{
-                        background: $secondary;
-                        color: $primary;
-                        &:hover{
-                             background:lighten($secondary, 8) 
+                        transition: .3s all;
+                        a{
+                            color: $primary
                         }
                     }
                 }
             }
+           
         }
 
         @include to(m){
