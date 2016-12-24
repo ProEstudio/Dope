@@ -13,6 +13,9 @@
     &__nav{
         @include edItem(100,80,40);
         .main-nav{
+            @include to(m){ 
+                margin-top: 1px;
+            }
             @include edNav(right,m);
             background: $primary;
             &__menu{
