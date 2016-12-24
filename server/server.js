@@ -118,7 +118,6 @@ var Server = function () {
                 session = req.session;
                 if (session.uniqueID == 'admin') {
                     res.redirect('/admin');
-                    console.log(session.uniqueID);
                 } else {
                     res.end(req.session.uniqueID + ' no found <a href="/logout"> Salir </a>');
                 }

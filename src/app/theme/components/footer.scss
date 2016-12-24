@@ -1,0 +1,16 @@
+footer{
+    .footer-content{
+        @include edContainer
+    }
+    .footer-title{
+        @include edItem;
+        font-size: 35px;
+        text-align: center;
+        color: $favorite;
+        opacity: 5
+
+    }
+    .footer-image{
+        @include edItem
+    }
+}
