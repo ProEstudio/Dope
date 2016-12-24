@@ -40,7 +40,7 @@ gulp.task('sass',  () => {
     let processors = [
         autoprefixer({browsers: ['last 2 versions']})
     ];
-    return gulp.src('./src/app/theme/app.core.scss')
+    return gulp.src('./src/app/theme/styles.scss')
         .pipe(sass({outputStyle: 'compressed', includePaths: ["node_modules"]})
         .on('error', sass.logError))
         .pipe(plumber())

@@ -6,6 +6,10 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
 import compress from 'compression';
+import sessions from 'express-session';
+
+var session;
+var user;
 
 class Server {
     constructor(){
@@ -20,6 +24,11 @@ class Server {
         this.app.use(cors());
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: true}));
+        this.app.use(sessions({
+            secret: 'd*o*p*e*m*u*s*i*c',
+            resave: false,
+            saveUninitialized: false
+        }));
         this.app.use('/', express.static(path.join(__dirname + '/../public')));
     }
 
@@ -37,6 +46,41 @@ class Server {
     configureRoutes(){
         this.app.get('/', (req, res, next) => {
             res.sendfile(path.join(__dirname + 'index.html'))
+        });
+        this.app.get('/login' , (req,res) => {
+            session = req.session;
+            if(session.uniqueID){
+                res.redirect('/redirects');
+            }
+            res.sendFile(path.join(__dirname + './../public/login.html'))
+        });
+        this.app.post('/login', (req, res) => {
+            session = req.session;
+            if(session.uniqueID){
+                res.redirect('/redirects');
+            }
+            session.uniqueID = req.body.username
+            res.redirect('/redirects');
+        })
+        this.app.get('/logout', (req,res) => {
+            req.session.destroy()
+            res.redirect('/login')
+        })
+        this.app.get('/admin', (req, res) => {
+            session = req.session;
+            if(session.uniqueID != 'admin'){
+                res.end('Unauthorized access')
+            }
+            res.sendFile(path.join(__dirname + './../public/admin.html'))
+        })
+        this.app.get('/redirects' , (req, res) => {
+            session = req.session;
+            if(session.uniqueID == 'admin'){
+                res.redirect('/admin');
+                console.log(session.uniqueID)
+            } else{
+                res.end(req.session.uniqueID + ' no found <a href="/logout"> Salir </a>')
+            }
         })
     }
 
