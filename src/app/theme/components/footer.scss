@@ -7,10 +7,19 @@ footer{
         font-size: 35px;
         text-align: center;
         color: $favorite;
-        opacity: 5
+        opacity: 5;
+        @include from(m){
+            font-size: 45px
+        }
 
     }
     .footer-image{
-        @include edItem
+        @include edItem;
+        text-align: center;
+        @include from(m){
+            img{
+                width: 50%
+            }
+        }
     }
 }
