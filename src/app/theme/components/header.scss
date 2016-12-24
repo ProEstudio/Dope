@@ -3,17 +3,19 @@
         @include edContainer
     }
     &__logo{
-        @include edItem(85,20,10)
+        @include edItem(90,20,10)
     }
     &__toggle{
+        margin: 15px 0;
         @include navToggle(16px,black);
-        @include showTo(m)
+        @include showTo(m);
     }
     &__nav{
         @include edItem(100,80,90);
         .main-nav{
             @include edContainer;
             @include edNav(right,m);
+            background: $primary;
             &__menu{
                 @include edItem(100,30,20);
                 @include edMenu(m);
@@ -25,8 +27,23 @@
                 @include to(m){
                     text-align: center;
                     flex-direction: column;
-                    &__button{
-                        margin: 20px
+                    &__button, &__button__2{
+                        margin: 5px;
+                        padding: 9px;
+                        color: $secondary;
+                        text-decoration: none;
+                        border: 1px solid $secondary;
+                        border-radius: 5px;
+                        &:hover{
+                            background:lighten($secondary, 90) 
+                        }
+                    }
+                    &__button__2{
+                        background: $secondary;
+                        color: $primary;
+                        &:hover{
+                             background:lighten($secondary, 8) 
+                        }
                     }
                 }
                 @include from (m){
