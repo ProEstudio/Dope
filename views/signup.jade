@@ -1,0 +1,15 @@
+extends layout
+block content
+    form(action="/users", method="POST")
+        div
+            label(for="email") Email
+            input(type="text" , name="email", placeholder="Email", id="email")
+        div
+            label(for="email") Username
+            input(type="text" , name="username", placeholder="Username", id="username")
+        div
+            label(for="password") Password
+            input(type="password" , name="password", placeholder="Password", id="password")
+        div
+            input(type="submit" value="Iniciar sesión")
+        

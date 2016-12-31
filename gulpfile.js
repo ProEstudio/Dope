@@ -56,7 +56,7 @@ gulp.task('scss:w' , ['sass'])
 gulp.task('browser-sync' , ['nodemon'], () =>{
   browserSync.init(null, {
     proxy: "http://localhost:3000",
-    files: ["server/**/*.js","app/**/*.js"],
+    files: ["src/**/*.js","views/**/*.js"],
     browser: "",
     port: 7000,
   });
