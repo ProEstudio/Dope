@@ -1,19 +1,20 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var cookieSession = require('cookie-session');
+var session = require('express-session');
 var router_app = require('./routes_app')
 var session_middleware = require('./middlewares/session')
 var User = require('./models/user')
 
 var app = express();
 
-app.use('/public', express.static('public'));
+app.use('/', express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cookieSession({
-    name: 'session',
-    keys: ['llave-1', 'llave-2']
+app.use(session({
+    secret: "d*o*p*e*1*2*3",
+    resave: false,
+    saveUninitialized: false
 }))
 
 app.set('view engine', 'jade');
@@ -33,20 +34,24 @@ app.get(('/login') , function(req, res){
 });
 
 app.post(('/users') , function(req, res){
-    var user = new User({email: req.body.email , password: req.body.password});
+    var user = new User({email: req.body.email , username: req.body.username, password: req.body.password});
 
     user.save(function(){
-        res.redirect('/')
+        res.redirect('/login')
     })
 });
 
 app.post(('/sessions') , function(req, res){
-    User.findOne({email: req.body.email, password: req.body.password},function(err,user){
+    User.findOne({username: req.body.username, password: req.body.password},function(err,user){
         req.session.user_id = user._id;
         res.redirect('/app')
     })
 });
 
+app.get(('/logout'), function(req, res){
+    req.session.destroy();
+    res.redirect('/login')
+})
 app.use('/app', session_middleware)
 app.use('/app', router_app)
 

@@ -4,7 +4,7 @@
   "description": "Dope Music",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "gulp",
     "start": "node start"
   },
   "author": "Jair Perez Oquendo",
@@ -14,7 +14,9 @@
     "compression": "^1.6.2",
     "cookie-session": "^2.0.0-alpha.2",
     "cors": "^2.8.1",
+    "ed-grid": "^2.1.1",
     "express": "^4.14.0",
+    "express-session": "^1.14.2",
     "helmet": "^3.1.0",
     "jade": "^1.11.0",
     "mongoose": "^4.7.5",

@@ -40,12 +40,12 @@ gulp.task('sass',  () => {
     let processors = [
         autoprefixer({browsers: ['last 2 versions']})
     ];
-    return gulp.src('./src/app/theme/styles.scss')
+    return gulp.src('./theme/styles.scss')
         .pipe(sass({outputStyle: 'compressed', includePaths: ["node_modules"]})
         .on('error', sass.logError))
         .pipe(plumber())
         .pipe(postcss(processors))
-        .pipe(gulp.dest('public'))
+        .pipe(gulp.dest('public/css'))
         .pipe(browserSync.stream());
 });
 
@@ -56,7 +56,7 @@ gulp.task('scss:w' , ['sass'])
 gulp.task('browser-sync' , ['nodemon'], () =>{
   browserSync.init(null, {
     proxy: "http://localhost:8080",
-    files: ["src/**/*.js","views/**/*.js"],
+    files: ["./**/*.js","views/**/*.jade"],
     browser: "",
     port: 7000,
   });
@@ -67,7 +67,7 @@ gulp.task('browser-sync' , ['nodemon'], () =>{
 gulp.task('all:w',['jade' , 'babel' , 'sass'], () => {
   gulp.watch('./src/server/**/*.js', ['js:w'])
   gulp.watch('./src/app/**/*.jade', ['jade:w'])
-  gulp.watch('./src/app/**/**.scss', ['scss:w'])
+  gulp.watch('./theme/**/**.scss', ['scss:w'])
 })
 
 // Start and Reset Server ================
